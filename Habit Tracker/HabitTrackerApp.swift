@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct Habit_TrackerApp: App {
+struct HabitTrackerApp: App {
+    @State private var habits: [Habit] = Habit.sampleData
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DailyView(habits: $habits)
         }
     }
 }
