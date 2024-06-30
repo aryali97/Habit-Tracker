@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Habit: Identifiable {
+struct Habit: Identifiable, Hashable {
     let id: UUID
     var name: String
     var description: String
@@ -22,9 +22,9 @@ struct Habit: Identifiable {
         name: String,
         description: String = "",
         emoji: String = "😀",
-        color: Color = Color.red100,
+        color: Color,
         habitType: HabitType = HabitType.increase,
-        goal: Goal = Goal(count: 5, unit: Unit.count, frequency: Frequency.day)) {
+        goal: Goal = Goal(count: 5, unit: Unit.count, frequency: Frequency.daily)) {
         self.id = id
         self.name = name
         self.description = description
@@ -33,6 +33,14 @@ struct Habit: Identifiable {
         self.habitType = habitType
         self.goal = goal
     }
+
+    static func == (lhs: Habit, rhs: Habit) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 extension Habit {
@@ -40,18 +48,19 @@ extension Habit {
         Habit(
             name: "Piano",
             description: "30 minutes",
-            emoji: "🎹"),
+            emoji: "🎹",
+            color: PastelColor.red.color),
         Habit(
             name: "Stretch",
             emoji: "🧘",
-            color: Color.blue100,
+            color: PastelColor.blue.color,
             habitType: HabitType.increase,
-            goal: Goal(count: 6, unit: Unit.min, frequency: Frequency.day)),
+            goal: Goal(count: 6, unit: Unit.min, frequency: Frequency.daily)),
         Habit(
             name: "Call Parents",
             emoji: "📞",
-            color: Color.deepPurple100,
+            color: PastelColor.deepPurple.color,
             habitType: HabitType.increase,
-            goal: Goal(count: 3, unit: Unit.count, frequency: Frequency.week))
+            goal: Goal(count: 3, unit: Unit.count, frequency: Frequency.weekly))
     ]
 }

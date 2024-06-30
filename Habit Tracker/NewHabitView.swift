@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewHabitView: View {
-    @State var habit: Habit = Habit(name: "")
+    @State var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
     @Binding var habits: [Habit]
     @Binding var isPresentingNewHabitView: Bool
 

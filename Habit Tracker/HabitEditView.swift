@@ -70,5 +70,7 @@ struct HabitEditView: View {
 }
 
 #Preview {
-    HabitEditView(habit: .constant(Habit(name: "")))
+    HabitEditView(habit: .constant(Habit(
+        name: "",
+        color: PastelColor.red.color)))
 }

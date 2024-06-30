@@ -9,8 +9,15 @@ import SwiftUI
 
 struct HabitCardView: View {
     let habit: Habit
+    @Binding var habitRecord: HabitRecord
+    
+    private var progress: Double {
+        return Double(habitRecord.count) / Double(habit.goal.count)
+    }
+
     
     var body: some View {
+        ProgressView(value: progress)
         HStack {
             Text(habit.emoji)
                 .font(.title)
@@ -24,7 +31,11 @@ struct HabitCardView: View {
             }
             .frame(alignment: .leading)
             Spacer()
-            Text("0/\(habit.goal.count)")
+            VStack (alignment: .trailing, spacing: 2) {
+                Text("\(habitRecord.count)/\(habit.goal.count)")
+                Text(habit.goal.frequency.name)
+                    .font(.caption)
+            }
         }
         .padding()
         .background(
@@ -34,5 +45,11 @@ struct HabitCardView: View {
 }
 
 #Preview {
-    HabitCardView(habit: Habit.sampleData[0])
+    HabitCardView(
+        habit: Habit.sampleData[0],
+        habitRecord: .constant(HabitRecord(
+            habit: Habit.sampleData[0],
+            count: 1,
+            recordFrequency: .daily,
+            date: Date())))
 }

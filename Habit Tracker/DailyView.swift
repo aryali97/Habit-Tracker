@@ -13,6 +13,7 @@ struct DailyView: View {
     @State private var isPresentingEditHabitView = false
     
     @Binding var habits: [Habit]
+    @Binding var dailyHabitRecords: [Habit: HabitRecord]
 
     var body: some View {
         NavigationStack {
@@ -30,13 +31,17 @@ struct DailyView: View {
             }
             VStack {
                 ForEach($habits.indices, id: \.self) { index in
-                    HabitCardView(habit: $habits[index].wrappedValue)
+                    if let habitRecordBinding = bindingForHabitRecord(habit: habits[index]) {
+                        HabitCardView(
+                            habit: habits[index],
+                            habitRecord: habitRecordBinding)
                         .onLongPressGesture {
                             habitToEditIdx = index
                             isPresentingEditHabitView = true
                             let impactMed = UIImpactFeedbackGenerator(style: .medium)
                             impactMed.impactOccurred()
                         }
+                    }
                 }
             }
             Spacer()
@@ -55,8 +60,21 @@ struct DailyView: View {
                 habitToEditIdx: habitToEditIdx ?? 0)
         }
     }
+
+    func bindingForHabitRecord(habit: Habit) -> Binding<HabitRecord>? {
+        return Binding(
+            get: {
+                return dailyHabitRecords[habit]!
+            },
+            set: {
+                dailyHabitRecords[habit] = $0
+            }
+        )
+    }
 }
 
 #Preview {
-    DailyView(habits: .constant(Habit.sampleData))
+    DailyView(
+        habits: .constant(Habit.sampleData),
+        dailyHabitRecords: .constant(HabitRecord.sampleMapping))
 }

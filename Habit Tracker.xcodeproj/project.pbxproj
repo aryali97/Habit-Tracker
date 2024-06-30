@@ -22,6 +22,8 @@
 		8514DEDF2C30E114007712E3 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEDE2C30E114007712E3 /* NewHabitView.swift */; };
 		8514DEE12C30F644007712E3 /* HabitEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE02C30F644007712E3 /* HabitEditView.swift */; };
 		8514DEE32C310030007712E3 /* HabitEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE22C310030007712E3 /* HabitEditorView.swift */; };
+		8514DEE72C31B803007712E3 /* PastelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE62C31B803007712E3 /* PastelColor.swift */; };
+		8514DEE92C31C574007712E3 /* HabitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE82C31C574007712E3 /* HabitRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		8514DEDE2C30E114007712E3 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		8514DEE02C30F644007712E3 /* HabitEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEditView.swift; sourceTree = "<group>"; };
 		8514DEE22C310030007712E3 /* HabitEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEditorView.swift; sourceTree = "<group>"; };
+		8514DEE62C31B803007712E3 /* PastelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastelColor.swift; sourceTree = "<group>"; };
+		8514DEE82C31C574007712E3 /* HabitRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				8514DED32C30B220007712E3 /* Habit.swift */,
+				8514DEE82C31C574007712E3 /* HabitRecord.swift */,
 				8514DED62C30B318007712E3 /* Goal.swift */,
 				8514DED82C30B595007712E3 /* HabitType.swift */,
+				8514DEE62C31B803007712E3 /* PastelColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				8514DED12C30B0B8007712E3 /* DailyView.swift in Sources */,
 				8514DEE12C30F644007712E3 /* HabitEditView.swift in Sources */,
 				8514DEA82C30AFEA007712E3 /* ContentView.swift in Sources */,
+				8514DEE92C31C574007712E3 /* HabitRecord.swift in Sources */,
+				8514DEE72C31B803007712E3 /* PastelColor.swift in Sources */,
 				8514DEDF2C30E114007712E3 /* NewHabitView.swift in Sources */,
 				8514DED42C30B220007712E3 /* Habit.swift in Sources */,
 				8514DEDD2C30BC72007712E3 /* HabitCardView.swift in Sources */,
@@ -472,8 +480,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -482,10 +491,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aniryali.Scrumdinger.Habit-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,8 +520,9 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -520,10 +531,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aniryali.Scrumdinger.Habit-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

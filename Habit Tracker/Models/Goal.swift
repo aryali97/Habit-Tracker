@@ -33,8 +33,8 @@ enum Unit: String, CaseIterable, Identifiable {
 }
 
 enum Frequency: String, CaseIterable, Identifiable {
-    case day
-    case week
+    case daily
+    case weekly
     
     var name: String {
         rawValue.capitalized
