@@ -14,6 +14,7 @@ struct DailyView: View {
     
     @Binding var habits: [Habit]
     @Binding var dailyHabitRecords: [Habit: HabitRecord]
+    var value: Int = 0
 
     var body: some View {
         NavigationStack {
