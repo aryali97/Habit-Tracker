@@ -8,12 +8,21 @@
 import SwiftUI
 
 enum PastelColor: String, CaseIterable, Identifiable {
-    case blue
+    case purple
     case deepPurple
     case indigo
-    case pink
-    case purple
+    case blue
+    case lightBlue
+    case cyan
+    case teal
+    case green
+    case lightGreen
+    case lime
+    case yellow
+    case amber
+    case orange
     case red
+    case pink
 
     var color: Color {
         Color("\(rawValue)100")

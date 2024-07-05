@@ -24,6 +24,7 @@
 		8514DEE32C310030007712E3 /* HabitEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE22C310030007712E3 /* HabitEditorView.swift */; };
 		8514DEE72C31B803007712E3 /* PastelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE62C31B803007712E3 /* PastelColor.swift */; };
 		8514DEE92C31C574007712E3 /* HabitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEE82C31C574007712E3 /* HabitRecord.swift */; };
+		85CD03022C38AF8300DFDE36 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD03012C38AF8300DFDE36 /* ColorPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8514DEE22C310030007712E3 /* HabitEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEditorView.swift; sourceTree = "<group>"; };
 		8514DEE62C31B803007712E3 /* PastelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastelColor.swift; sourceTree = "<group>"; };
 		8514DEE82C31C574007712E3 /* HabitRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRecord.swift; sourceTree = "<group>"; };
+		85CD03012C38AF8300DFDE36 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				8514DED02C30B0B8007712E3 /* DailyView.swift */,
 				8514DEDE2C30E114007712E3 /* NewHabitView.swift */,
 				8514DEE02C30F644007712E3 /* HabitEditView.swift */,
+				85CD03012C38AF8300DFDE36 /* ColorPickerView.swift */,
 				8514DEE22C310030007712E3 /* HabitEditorView.swift */,
 				8514DEDC2C30BC72007712E3 /* HabitCardView.swift */,
 				8514DEA72C30AFEA007712E3 /* ContentView.swift */,
@@ -308,6 +311,7 @@
 				8514DEE32C310030007712E3 /* HabitEditorView.swift in Sources */,
 				8514DEDB2C30B679007712E3 /* HabitTrackerApp.swift in Sources */,
 				8514DED72C30B318007712E3 /* Goal.swift in Sources */,
+				85CD03022C38AF8300DFDE36 /* ColorPickerView.swift in Sources */,
 				8514DED92C30B595007712E3 /* HabitType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
