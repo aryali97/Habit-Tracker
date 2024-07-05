@@ -76,8 +76,8 @@ struct HabitCardView: View {
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(habit.color))
-            .frame(height: 75)
         }
+        .frame(height: 75)
     }
 }
 
