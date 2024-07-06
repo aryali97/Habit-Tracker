@@ -36,12 +36,15 @@ struct DailyView: View {
                         HabitCardView(
                             habit: habits[index],
                             habitRecord: habitRecordBinding)
-                        .onLongPressGesture {
-                            habitToEditIdx = index
-                            isPresentingEditHabitView = true
-                            let impactMed = UIImpactFeedbackGenerator(style: .medium)
-                            impactMed.impactOccurred()
-                        }
+                        .highPriorityGesture(
+                            LongPressGesture(minimumDuration: 0.5)
+                                .onEnded {_ in 
+                                    habitToEditIdx = index
+                                    isPresentingEditHabitView = true
+                                    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                                    impactMed.impactOccurred()
+                                }
+                        )
                     }
                 }
             }
