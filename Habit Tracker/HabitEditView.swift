@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HabitEditView: View {
-    @Binding var habit: Habit
+//    @Binding var habit: Habit
+    @ObservedObject var habit: Habit
     @Binding var isPresentingColorPickerView: Bool
     
     private static let formatter: NumberFormatter = {
@@ -78,8 +79,8 @@ struct HabitEditView: View {
 
 #Preview {
     HabitEditView(
-        habit: .constant(Habit(
+        habit: Habit(
             name: "",
-            color: PastelColor.red.color)),
+            color: PastelColor.red.color),
         isPresentingColorPickerView: .constant(false))
 }

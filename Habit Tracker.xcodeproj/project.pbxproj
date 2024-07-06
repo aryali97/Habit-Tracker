@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850B11AA2C38F217003BBAE8 /* ColorPickerFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B11A92C38F217003BBAE8 /* ColorPickerFormView.swift */; };
 		8514DEA82C30AFEA007712E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8514DEA72C30AFEA007712E3 /* ContentView.swift */; };
 		8514DEAA2C30AFEB007712E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8514DEA92C30AFEB007712E3 /* Assets.xcassets */; };
 		8514DEAE2C30AFEB007712E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8514DEAD2C30AFEB007712E3 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		850B11A92C38F217003BBAE8 /* ColorPickerFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerFormView.swift; sourceTree = "<group>"; };
 		8514DEA22C30AFEA007712E3 /* Habit Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8514DEA72C30AFEA007712E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8514DEA92C30AFEB007712E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				8514DED02C30B0B8007712E3 /* DailyView.swift */,
 				8514DEDE2C30E114007712E3 /* NewHabitView.swift */,
 				8514DEE02C30F644007712E3 /* HabitEditView.swift */,
+				850B11A92C38F217003BBAE8 /* ColorPickerFormView.swift */,
 				85CD03012C38AF8300DFDE36 /* ColorPickerView.swift */,
 				8514DEE22C310030007712E3 /* HabitEditorView.swift */,
 				8514DEDC2C30BC72007712E3 /* HabitCardView.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850B11AA2C38F217003BBAE8 /* ColorPickerFormView.swift in Sources */,
 				8514DED12C30B0B8007712E3 /* DailyView.swift in Sources */,
 				8514DEE12C30F644007712E3 /* HabitEditView.swift in Sources */,
 				8514DEA82C30AFEA007712E3 /* ContentView.swift in Sources */,

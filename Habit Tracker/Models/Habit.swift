@@ -8,14 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct Habit: Identifiable, Hashable {
+class Habit: Identifiable, Hashable, ObservableObject {
     let id: UUID
-    var name: String
-    var description: String
-    var emoji: String
-    @State var color: Color
-    var habitType: HabitType
-    var goal: Goal
+    @Published var name: String
+    @Published var description: String
+    @Published var emoji: String
+    @Published var color: Color
+    @Published var habitType: HabitType
+    @Published var goal: Goal
 
     init(
         id: UUID = UUID(),

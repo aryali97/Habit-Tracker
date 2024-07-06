@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct NewHabitView: View {
-    @State var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
+//    @State var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
+    @StateObject var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
     @State var isPresentingColorPickerView: Bool = false
     @Binding var habits: [Habit]
     @Binding var isPresentingNewHabitView: Bool
 
     var body: some View {
         NavigationStack {
-            HabitEditView(habit: $habit, isPresentingColorPickerView: $isPresentingColorPickerView)
+            HabitEditView(habit: habit, isPresentingColorPickerView: $isPresentingColorPickerView)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {

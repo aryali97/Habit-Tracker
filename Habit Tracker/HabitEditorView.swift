@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HabitEditorView: View {
-    @State var habit: Habit
+    @StateObject var habit: Habit
     @State var isPresentingColorPickerView: Bool
     @Binding var habits: [Habit]
     @Binding var isPresentingEditHabitView: Bool
@@ -18,7 +18,7 @@ struct HabitEditorView: View {
         habits: Binding<[Habit]>,
         isPresentingEditHabitView: Binding<Bool>,
         habitToEditIdx: Int) {
-        self.habit = habits[habitToEditIdx].wrappedValue
+        self._habit = StateObject(wrappedValue: habits[habitToEditIdx].wrappedValue)
         self.isPresentingColorPickerView = false
         self._habits = habits
         self._isPresentingEditHabitView = isPresentingEditHabitView
@@ -28,7 +28,7 @@ struct HabitEditorView: View {
     var body: some View {
         NavigationStack {
             HabitEditView(
-                habit: $habit,
+                habit: habit,
                 isPresentingColorPickerView: $isPresentingColorPickerView)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
@@ -45,7 +45,10 @@ struct HabitEditorView: View {
                 }
         }
         .sheet(isPresented: $isPresentingColorPickerView) {
-            ColorPickerView(selectedPastelColor: $habit.color)
+            ColorPickerFormView(
+//                selectedPastelColor: $habit.color,
+                habit: habit,
+                isPresentingColorPickerView: $isPresentingColorPickerView)
         }
     }
 }

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ColorPickerView: View {
-    @Binding var selectedPastelColor: Color
+//    @Binding var selectedPastelColor: Color
+//    @Binding var habit: Habit
+    @Binding var selectedColor: Color
     let cols: Int = 5
     var rows: Int {
         return ((PastelColor.allCases.count - 1) / self.cols) + 1
@@ -23,7 +25,7 @@ struct ColorPickerView: View {
                         let pastelColor = PastelColor.allCases[pastelColorIdx]
                         
                         Button(action: {
-                            selectedPastelColor = pastelColor.color
+                            selectedColor = pastelColor.color
                         }) {
                             Circle()
                                 .fill(pastelColor.color)
@@ -31,7 +33,7 @@ struct ColorPickerView: View {
                                     Circle()
                                         .stroke(
                                             Color.gray,
-                                            lineWidth: self.selectedPastelColor == pastelColor.color ? 3 : 0)
+                                            lineWidth: self.selectedColor == pastelColor.color ? 3 : 0)
                                 )
                         }
                     }
@@ -42,5 +44,9 @@ struct ColorPickerView: View {
 }
 
 #Preview {
-    ColorPickerView(selectedPastelColor: .constant(PastelColor.allCases[0].color))
+    ColorPickerView(
+        selectedColor: .constant(PastelColor.red.color)
+//        habit: .constant(Habit.sampleData[0])
+//        selectedPastelColor: .constant(PastelColor.allCases[0].color)
+    )
 }
