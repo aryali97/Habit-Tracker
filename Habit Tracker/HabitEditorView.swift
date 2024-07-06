@@ -38,13 +38,7 @@ struct HabitEditorView: View {
                     }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Save") {
-                            print("SAVING")
-                            print(habit.color)
-                            print(habits[habitToEditIdx].color)
                             habits[habitToEditIdx] = habit
-                            print("-")
-                            print(habit.color)
-                            print(habits[habitToEditIdx].color)
                             isPresentingEditHabitView = false
                         }
                     }
@@ -52,13 +46,8 @@ struct HabitEditorView: View {
         }
         .sheet(isPresented: $isPresentingColorPickerView) {
             ColorPickerFormView(
-//                selectedPastelColor: $habit.color,
                 habit: habit,
                 isPresentingColorPickerView: $isPresentingColorPickerView)
-        }
-        .onDisappear {
-            print("DISAPPEARING")
-            print(habits[habitToEditIdx].color)
         }
     }
 }

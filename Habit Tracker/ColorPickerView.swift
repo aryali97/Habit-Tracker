@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ColorPickerView: View {
-//    @Binding var selectedPastelColor: Color
-//    @Binding var habit: Habit
     @Binding var selectedColor: Color
     let cols: Int = 5
     var rows: Int {
@@ -46,7 +44,5 @@ struct ColorPickerView: View {
 #Preview {
     ColorPickerView(
         selectedColor: .constant(PastelColor.red.color)
-//        habit: .constant(Habit.sampleData[0])
-//        selectedPastelColor: .constant(PastelColor.allCases[0].color)
     )
 }
