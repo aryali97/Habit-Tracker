@@ -28,9 +28,9 @@ struct HabitCardView: View {
         GeometryReader { geometry in
             ZStack (alignment:  .trailing) {
                 Rectangle()
-                    .fill(Color.white.opacity(0.4)) // Adjust the color and opacity as needed
+                    .fill(Color.white.opacity(0.4))
                     .frame(
-                        width: geometry.size.width * (1 - progressPerc), // 50% of the full width
+                        width: geometry.size.width * (1 - progressPerc),
                         height: 75
                     )
                 HStack {
