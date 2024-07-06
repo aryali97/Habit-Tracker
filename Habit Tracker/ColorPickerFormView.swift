@@ -30,10 +30,10 @@ struct ColorPickerFormView: View {
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Save") {
-                            print("SAVED")
-                            print(selectedColor)
+//                            print("SAVED")
+//                            print(selectedColor)
                             habit.color = selectedColor
-                            print(habit.color)
+//                            print(habit.color)
                             isPresentingColorPickerView = false
                         }
                     }
