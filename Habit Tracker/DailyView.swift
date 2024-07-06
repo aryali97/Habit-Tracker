@@ -51,6 +51,7 @@ struct DailyView: View {
         .sheet(isPresented: $isPresentingNewHabitView) {
             NewHabitView(
                 habits: $habits,
+                dailyHabitRecords: $dailyHabitRecords,
                 isPresentingNewHabitView: $isPresentingNewHabitView
             )
         }

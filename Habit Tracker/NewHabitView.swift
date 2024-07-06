@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct NewHabitView: View {
-//    @State var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
     @StateObject var habit: Habit = Habit(name: "", color: PastelColor.allCases.randomElement()!.color)
     @State var isPresentingColorPickerView: Bool = false
     @Binding var habits: [Habit]
+    @Binding var dailyHabitRecords: [Habit: HabitRecord]
     @Binding var isPresentingNewHabitView: Bool
 
     var body: some View {
         NavigationStack {
-            HabitEditView(habit: habit, isPresentingColorPickerView: $isPresentingColorPickerView)
+            HabitEditView(
+                habit: habit,
+                isPresentingColorPickerView: $isPresentingColorPickerView)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -26,10 +28,19 @@ struct NewHabitView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Add") {
                             habits.append(habit)
+                            dailyHabitRecords[habit] = HabitRecord(
+                                habit: habit,
+                                recordFrequency: Frequency.daily,
+                                date: Date())
                             isPresentingNewHabitView = false
                         }
                     }
                 }
+        }
+        .sheet(isPresented: $isPresentingColorPickerView) {
+            ColorPickerFormView(
+                habit: habit,
+                isPresentingColorPickerView: $isPresentingColorPickerView)
         }
     }
 }
@@ -37,5 +48,6 @@ struct NewHabitView: View {
 #Preview {
     NewHabitView(
         habits: .constant(Habit.sampleData),
+        dailyHabitRecords: .constant(HabitRecord.sampleMapping),
         isPresentingNewHabitView: .constant(true))
 }
