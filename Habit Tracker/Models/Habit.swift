@@ -13,7 +13,7 @@ struct Habit: Identifiable, Hashable {
     var name: String
     var description: String
     var emoji: String
-    var color: Color
+    @State var color: Color
     var habitType: HabitType
     var goal: Goal
 

@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct ColorPickerView: View {
-    @Binding var selectedPastelColor: PastelColor
+    @Binding var selectedPastelColor: Color
     let cols: Int = 5
+    var rows: Int {
+        return ((PastelColor.allCases.count - 1) / self.cols) + 1
+    }
 
     var body: some View {
-//        for i in 0...((PastelColor.allCases.count - 1) / self.cols) {
         VStack {
-            ForEach (0...((PastelColor.allCases.count - 1) / self.cols), id: \.self) { i in
+            ForEach (0..<self.rows, id: \.self) { i in
                 HStack {
                     ForEach (0..<5) { j in
                         let pastelColorIdx = (i * self.cols) + j
                         let pastelColor = PastelColor.allCases[pastelColorIdx]
                         
                         Button(action: {
-                            selectedPastelColor = pastelColor
+                            selectedPastelColor = pastelColor.color
                         }) {
                             Circle()
                                 .fill(pastelColor.color)
@@ -29,7 +31,7 @@ struct ColorPickerView: View {
                                     Circle()
                                         .stroke(
                                             Color.gray,
-                                            lineWidth: self.selectedPastelColor == pastelColor ? 3 : 0)
+                                            lineWidth: self.selectedPastelColor == pastelColor.color ? 3 : 0)
                                 )
                         }
                     }
@@ -40,5 +42,5 @@ struct ColorPickerView: View {
 }
 
 #Preview {
-    ColorPickerView(selectedPastelColor: .constant(PastelColor.allCases[0]))
+    ColorPickerView(selectedPastelColor: .constant(PastelColor.allCases[0].color))
 }

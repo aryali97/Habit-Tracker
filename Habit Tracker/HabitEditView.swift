@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HabitEditView: View {
     @Binding var habit: Habit
+    @Binding var isPresentingColorPickerView: Bool
     
     private static let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -30,7 +31,13 @@ struct HabitEditView: View {
                     TextField(habit.emoji, text: $habit.emoji)
                         .frame(width: 20)
                     Text("Color")
-                    Spacer()
+                    Button (action: {
+                        isPresentingColorPickerView = true
+                    }) {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(habit.color)
+                            .frame(height: 18)
+                    }
                 }
             }
             Section (header: Text("Habit Type").bold()) {
@@ -70,7 +77,9 @@ struct HabitEditView: View {
 }
 
 #Preview {
-    HabitEditView(habit: .constant(Habit(
-        name: "",
-        color: PastelColor.red.color)))
+    HabitEditView(
+        habit: .constant(Habit(
+            name: "",
+            color: PastelColor.red.color)),
+        isPresentingColorPickerView: .constant(false))
 }
